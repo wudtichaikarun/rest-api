@@ -17,8 +17,8 @@ const UsersSerializer = {
     },
 
     serialize(user) {
-          const { id, email } = user
-        return { id, email }
+          const { id, email, isAdmin } = user
+        return { id, email, isAdmin }
     }
 }
 
