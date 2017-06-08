@@ -17,16 +17,15 @@ export default {
     {
       id: 1,
       email: 'romantic@gmail.com',
-      name: "Wudtichai Karun",
+      isAdmin: true,
       password: '12334',
-      isAdmin: true
+     
     },
     {
       id: 2,
       email: 'yotsanan@gmail.com',
-      name: "Yotsanan Prommengkong",
+      isAdmin: false,
       password: '12334',
-      isAdmin: false
     }
   ]
 }

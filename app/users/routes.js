@@ -3,16 +3,8 @@ import controller from './controller'
 export function setup(router){
     // instand of app.get('/users',() => {})
     router
-    .get('/:id', controller.get)
-    .get('/', controller.getAll)
-    .post('/', controller.create)
+    .get('/:id', controller.get) // --->   localhost:3000/users/:id
+    .get('/', controller.getAll) // --->   localhost:3000/users
+    .post('/', controller.create)// --->   localhost:3000/users
 }
 
-
-//old router
-// app.get('/users',() => {})
-// app.get('/users/:id',() => {})
-// app.post('/users',() => {})
-
-    // instand of app.get('/users',() => {})
-    //router.get('/',(req, res) => { res.send('hello worldvvv') })

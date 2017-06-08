@@ -2,6 +2,7 @@ import express from 'express'
 import fs from 'fs'
 import bodyParser from 'body-parser'
 
+//for call folder app
 function setupRoutes(app){
     const APP_DIR = `${__dirname}/app`
     const features = fs.readdirSync(APP_DIR).filter(
@@ -13,7 +14,7 @@ function setupRoutes(app){
         const routes = require(`${APP_DIR}/${feature}/routes.js`)
 
         routes.setup(router)
-        app.use(`/${feature}`, router)// /users
+        app.use(`/${feature}`, router)// --->/users
     })
 }
 

@@ -8,21 +8,22 @@ const Users = {
 
    createnewUser(email, password){
     return new Promise((resolve, reject) => {
-        bcrypt.hash(password, 12, (err, hash) => {
+      const users = bcrypt.hash(password, 12, (err, hash) => {
         if(err) return reject(err)
 
         const collection = this.collection()
-        const user = {
+        var user = {
             id: collection.length + 1,
             email,
             password: hash,
             isAdmin: false
         }
-        // console.log(user);
-        console.log("-------->promise function")
-        //this.setCollection([...collection, user])
-        //return resolve(user)
+        
+         //this.setCollection([...collection, user])
+         //return resolve(user)
+         return user;
        })
+       console.log(user)
      })
    }
 }

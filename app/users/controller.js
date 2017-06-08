@@ -7,6 +7,7 @@ const UsersController = {
             users: UsersSerializer.for('getAll',Users.findAll())
         })
     },
+    
     get(req, res) {
         res.json({
             user: UsersSerializer.for('get',Users.find(req.params.id))
@@ -14,14 +15,12 @@ const UsersController = {
     },
 
     create(req, res) {
-        const { email, password } = req.body
-        
+        const { email, password } = req.body 
         Users.createnewUser(email, password).then( 
-            console.log("------->working after Promise")
-        //     user => res.status(201) .json({
-        //          user: UsersSerializer .for('create', user)
-        // })
-      )   
+         //   user => res.status(201).json({ 
+         //       user: UsersSerializer.for('create', user) })
+         console.log("then method")
+      )
     }
 }
 
