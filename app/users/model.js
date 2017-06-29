@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 import Model from '../model'
 
 const Users = {
@@ -19,10 +20,14 @@ const Users = {
             isAdmin: false
         }
         
-         this.setCollection([...collection, user])
-         return resolve(user)
+        this.setCollection([...collection, user])
+        return resolve(user)
       })
     })
+  },
+
+  genToken(user){
+    return jwt.sign({ sub: user.id }, 'romantic_secret', { expiresIn: '1h' })
   }
 }
 export default Users
