@@ -28,6 +28,22 @@ const Users = {
 
   genToken(user){
     return jwt.sign({ sub: user.id }, 'romantic_secret', { expiresIn: '1h' })
+  },
+
+  findByEmail(email){
+    return this.collection().find(user => user.email === email)
+  },
+
+  verify(user, password) {
+    return new Promise((resolve, reject) => {
+      const hash = user.password
+
+      bcrypt.compare(password, hash, (err, isValid) =>{
+        if(err) return reject(err)
+        return resolve(isValid)
+      })
+    })
   }
+
 }
 export default Users

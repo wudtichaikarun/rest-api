@@ -22,9 +22,7 @@ const UsersController = {
                 res
                 .header('Authorization', `Bearer ${Users.genToken(user)} `)
                 .status(201) 
-                .json({ 
-                user: UsersSerializer.for('create', user)
-                }) 
+                .json({ user: UsersSerializer.for('create', user) }) 
             } 
         )
     
