@@ -11,8 +11,7 @@ const Model = {
 
     create(attrs) {
         const collection = this.collection()
-        const record = 
-        this.withPermmitedAttrs(attrs, { id: collection.length + 1 })
+        const record = this.withPermmitedAttrs(attrs, { id: collection.length + 1 })
 
         this.setCollection([...collection, record])
         return record
