@@ -2,6 +2,7 @@ import Articles from './model'
 
 const ArticlesController = {
     getAll(req, res){
+        console.log(req.user)
         res.json({ articles: Articles.findAll() })
     },
 

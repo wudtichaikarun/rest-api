@@ -1,6 +1,7 @@
 import express from 'express'
 import fs from 'fs'
 import bodyParser from 'body-parser'
+import auth from './middlewares/auth'
 
 //for call folder app
 function setupRoutes(app){
@@ -22,15 +23,9 @@ export function setup () {
 const app = express()
 const PORT = 3000
 
+app.use(auth)
 app.use(bodyParser.urlencoded({  extended: true }))
-app.use(bodyParser.json());
-
-//old route
-// app.get('/', (req, res) => {
-//     res.send("hello romantic")
-// })
-
-//new route
+app.use(bodyParser.json())
 setupRoutes(app)
 
 app.listen(PORT, () =>
