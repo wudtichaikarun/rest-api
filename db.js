@@ -1,16 +1,22 @@
 export default {
   articles: [
     {
-      id: 2,
-      title: "json-server-test02",
-      content: "Lorem Ipsum",
+      id: 1,
+      title: "json-server-test01",
+      content: "Lorem Ipsum1",
       authorId: 1
     },
     {
-      id: 3,
+      id: 2,
       title: "json-server-test02",
-      content: "Lorem Ipsum",
-      authorId: 1
+      content: "Lorem Ipsum2",
+      authorId: 3
+    },
+    {
+      id: 3,
+      title: "json-server-test03",
+      content: "Lorem Ipsum3",
+      authorId: 3
     }
   ],
   users: [
