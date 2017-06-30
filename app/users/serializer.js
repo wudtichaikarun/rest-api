@@ -12,7 +12,7 @@ const UsersSerializer = {
        return users.map(user => this.serialize(user)) 
     },
 
-    create(){
+    create(user){
         return this.serialize(user)
     },
 
