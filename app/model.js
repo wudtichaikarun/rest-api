@@ -1,14 +1,11 @@
 import db from '../db'
+import Fider from './finder'
+import Pagination from './pagination'
 
 const Model = {
-    findAll() {
-        return this.collection()
-    },
-
-    find(id) {
-        return this.findRecord(id)
-    },
-
+    ...Fider,
+    ...Pagination,
+    
     create(attrs) {
         const collection = this.collection()
         const record = this.withPermmitedAttrs(attrs, { id: collection.length + 1 })
