@@ -15,20 +15,20 @@ function setupRoutes(app){
         const routes = require(`${APP_DIR}/${feature}/routes.js`)
 
         routes.setup(router)
-        app.use(`/${feature}`, router)// --->/users
+        app.use(`/${feature}`, router)
     })
 }
 
 export function setup () {
-const app = express()
-const PORT = 3000
+    const app = express()
+    const PORT = 3000
 
-app.use(auth)
-app.use(bodyParser.urlencoded({  extended: true }))
-app.use(bodyParser.json())
-setupRoutes(app)
+    app.use(auth)
+    app.use(bodyParser.urlencoded({  extended: true }))
+    app.use(bodyParser.json())
+    setupRoutes(app)
 
-app.listen(PORT, () =>
-    console.log('App listenning on http://localhost:'+PORT)
- )
+    app.listen(PORT, () =>
+        console.log('App listenning on http://localhost:'+PORT)
+    )  
 }
